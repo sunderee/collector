@@ -11,6 +11,14 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Internationalization
+  intl: ^0.17.0
+  flutter_localizations:
+    sdk: flutter
+
+  # UI-related
+  google_fonts: ^3.0.1
+
 dev_dependencies:
   # Linter
   flutter_lints: ^2.0.1
@@ -21,3 +29,4 @@ dev_dependencies:
   
 flutter:
   uses-material-design: true
+  generate: true

@@ -7,7 +7,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: systolic, diastolic and pulse number pickers
     return Scaffold(
       appBar: AppBar(
         title: Text(context.locale.appName),

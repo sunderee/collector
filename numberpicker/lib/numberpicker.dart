@@ -96,7 +96,7 @@ class _NumberPickerState extends State<NumberPicker> {
     final itemStyle = value == widget.value ? selectedStyle : defaultStyle;
 
     final child = isExtra
-        ? SizedBox.shrink()
+        ? const SizedBox.shrink()
         : Text(
             value.toString(),
             style: itemStyle,

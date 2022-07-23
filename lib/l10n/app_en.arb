@@ -1,3 +1,8 @@
 {
-    "appName": "Collector"
+    "appName": "Collector",
+    "systolic": "Systolic",
+    "diastolic": "Diastolic",
+    "pulse": "Pulse",
+    "measurementBloodPressure": "mmHg",
+    "measurementPulse": "bpm"
 }

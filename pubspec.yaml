@@ -18,15 +18,29 @@ dependencies:
 
   # UI-related
   google_fonts: ^3.0.1
+  numberpicker:
+    path: ./numberpicker
 
 dev_dependencies:
   # Linter
   flutter_lints: ^2.0.1
 
+  # Launcher icon generator
+  flutter_launcher_icons: ^0.9.3
+
   # Testing
   flutter_test:
     sdk: flutter
   
+flutter_icons:
+  android: ic_launcher
+  ios: false
+  image_path: assets/app_icon.png
+  adaptive_icon_foreground: assets/app_icon.png
+  adaptive_icon_background: "#FF6978"
+
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/app_icon.png

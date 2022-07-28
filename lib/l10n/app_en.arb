@@ -1,5 +1,7 @@
 {
     "appName": "Collector",
+    "error": "Something went wrong",
+    "empty": "Nothing to see here",
     "bottomBarLabelHome": "Home",
     "bottomBarLabelHistory": "History",
     "bottomBarLabelSettings": "Settings",
@@ -8,5 +10,10 @@
     "pulse": "Pulse",
     "measurementBloodPressure": "mmHg",
     "measurementPulse": "bpm",
-    "add": "ADD"
+    "add": "ADD",
+    "measurementAdded": "Measurement added",
+    "categoryNormal": "Normal",
+    "categoryElevated": "Elevated",
+    "categoryHypertension": "Hypertension",
+    "categoryUnknown": "Unknown"
 }

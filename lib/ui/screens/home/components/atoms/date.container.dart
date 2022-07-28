@@ -19,7 +19,7 @@ class DateContainer extends StatelessWidget {
           context: context,
           initialDate: date,
           firstDate: date.subtract(const Duration(days: 30)),
-          lastDate: date,
+          lastDate: date.add(const Duration(days: 30)),
         );
         if (newDate != null) {
           final newTime = await showTimePicker(

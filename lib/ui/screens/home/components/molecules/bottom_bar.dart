@@ -1,8 +1,13 @@
-import 'package:collector/utils/extensions/localization.ext.dart';
+import 'package:collector/utils/extensions/build_context.ext.dart';
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatefulWidget {
-  const BottomBar({super.key});
+  final ValueSetter<int> onPageSelected;
+
+  const BottomBar({
+    super.key,
+    required this.onPageSelected,
+  });
 
   @override
   State<BottomBar> createState() => _BottomBarState();
@@ -28,7 +33,10 @@ class _BottomBarState extends State<BottomBar> {
           label: context.locale.bottomBarLabelSettings,
         ),
       ],
-      onTap: (int newIndex) => setState(() => _currentIndex = newIndex),
+      onTap: (int newIndex) {
+        setState(() => _currentIndex = newIndex);
+        widget.onPageSelected(_currentIndex);
+      },
       currentIndex: _currentIndex,
       selectedItemColor: Theme.of(context).colorScheme.primary,
     );

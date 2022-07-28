@@ -1,7 +1,11 @@
+import 'package:collector/data/measurement.schema.dart';
+import 'package:collector/state/measurement.cubit.dart';
+import 'package:collector/state/measurement.state.dart';
 import 'package:collector/ui/screens/home/components/atoms/date.container.dart';
 import 'package:collector/ui/screens/home/components/atoms/number_picker.container.dart';
-import 'package:collector/utils/extensions/localization.ext.dart';
+import 'package:collector/utils/extensions/build_context.ext.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MeasurementContainer extends StatefulWidget {
   const MeasurementContainer({super.key});
@@ -57,11 +61,29 @@ class _MeasurementContainerState extends State<MeasurementContainer> {
             ),
           ),
           const SizedBox(height: 32.0),
-          MaterialButton(
-            color: Theme.of(context).colorScheme.primary,
-            minWidth: MediaQuery.of(context).size.width,
-            onPressed: () {},
-            child: Text(context.locale.add),
+          BlocListener<MeasurementCubit, MeasurementState>(
+            listener: (BuildContext context, MeasurementState state) {
+              if (state.status == StatusEnum.failed) {
+                context.showSnackBar(state.errorMessage);
+              }
+            },
+            child: MaterialButton(
+              color: Theme.of(context).colorScheme.primary,
+              minWidth: MediaQuery.of(context).size.width,
+              onPressed: () {
+                context.showSnackBar(context.locale.measurementAdded);
+                BlocProvider.of<MeasurementCubit>(context).addMeasurement(
+                  MeasurementSchema(
+                    systolic: _currentSystolic,
+                    diastolic: _currentDiastolic,
+                    pulse: _currentPulse,
+                    timestamp: _currentDate.millisecondsSinceEpoch,
+                  ),
+                  context.locale.error,
+                );
+              },
+              child: Text(context.locale.add),
+            ),
           ),
         ],
       ),

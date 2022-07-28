@@ -1,8 +1,8 @@
 import 'package:collector/state/measurement.cubit.dart';
-import 'package:collector/ui/screens/home/components/molecules/bottom_bar.dart';
-import 'package:collector/ui/screens/home/components/pages/history.page.dart';
-import 'package:collector/ui/screens/home/components/pages/home.page.dart';
-import 'package:collector/ui/screens/home/components/pages/settings.page.dart';
+import 'package:collector/ui/screens/components/molecules/bottom_bar.dart';
+import 'package:collector/ui/screens/components/pages/history.page.dart';
+import 'package:collector/ui/screens/components/pages/home.page.dart';
+import 'package:collector/ui/screens/components/pages/settings.page.dart';
 import 'package:collector/utils/extensions/build_context.ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -32,6 +32,7 @@ class HistoryPage extends StatelessWidget {
                       ),
                       subtitle: Text(
                         '${DateTime.fromMillisecondsSinceEpoch(item.timestamp).formatToHumanReadable} | ${item.pulse} ${context.locale.measurementPulse}',
+                        style: Theme.of(context).textTheme.bodyText2,
                       ),
                     );
                   },

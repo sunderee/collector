@@ -14,6 +14,9 @@ class AppTheme {
                 headline5: Theme.of(context).textTheme.headline5?.copyWith(
                       color: ColorTheme.colorBackgroundDark,
                     ),
+                headline6: Theme.of(context).textTheme.headline6?.copyWith(
+                      color: ColorTheme.colorBackgroundDark,
+                    ),
                 subtitle1: Theme.of(context).textTheme.subtitle1?.copyWith(
                       color: ColorTheme.colorBackgroundDark,
                     ),
@@ -50,6 +53,9 @@ class AppTheme {
         textTheme: GoogleFonts.montserratTextTheme(
           Theme.of(context).textTheme.copyWith(
                 headline5: Theme.of(context).textTheme.headline5?.copyWith(
+                      color: ColorTheme.colorBackgroundLight,
+                    ),
+                headline6: Theme.of(context).textTheme.headline6?.copyWith(
                       color: ColorTheme.colorBackgroundLight,
                     ),
                 subtitle1: Theme.of(context).textTheme.subtitle1?.copyWith(

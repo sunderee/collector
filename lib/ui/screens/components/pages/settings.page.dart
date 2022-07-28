@@ -1,4 +1,5 @@
 import 'package:collector/utils/extensions/build_context.ext.dart';
+import 'package:collector/utils/helpers/url_launcher.helper.dart';
 import 'package:flutter/material.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -23,6 +24,7 @@ class SettingsPage extends StatelessWidget {
             context.locale.sourceCodeSubtitle,
             style: Theme.of(context).textTheme.bodyText2,
           ),
+          onTap: () => launchRepositoryURL(),
         ),
       ],
     );

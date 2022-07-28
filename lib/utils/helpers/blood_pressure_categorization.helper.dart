@@ -1,4 +1,24 @@
-enum BloodPressureCategory { normal, elevated, hypertension }
+import 'package:collector/utils/extensions/build_context.ext.dart';
+import 'package:flutter/material.dart';
+
+enum BloodPressureCategory {
+  normal,
+  elevated,
+  hypertension;
+
+  String? toHumanReadable(BuildContext context) {
+    switch (this) {
+      case BloodPressureCategory.normal:
+        return context.locale.categoryNormal;
+      case BloodPressureCategory.elevated:
+        return context.locale.categoryElevated;
+      case BloodPressureCategory.hypertension:
+        return context.locale.categoryHypertension;
+      default:
+        return null;
+    }
+  }
+}
 
 /// Categorization follows the official guidelines by CDC, in particular, The
 /// American College of Cardiology/American Heart Association Guideline for the

@@ -18,8 +18,6 @@ dependencies:
 
   # UI-related
   google_fonts: ^3.0.1
-  numberpicker:
-    path: ./numberpicker
 
 dev_dependencies:
   # Linter

@@ -1,6 +1,3 @@
-/// Custom number picker for Collector inspired by numberpicker package.
-library numberpicker;
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

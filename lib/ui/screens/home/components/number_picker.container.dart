@@ -1,5 +1,5 @@
+import 'package:collector/ui/widgets/number_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:numberpicker/numberpicker.dart';
 
 class NumberPickerContainer extends StatelessWidget {
   final String title;

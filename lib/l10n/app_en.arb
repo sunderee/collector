@@ -15,5 +15,9 @@
     "categoryNormal": "Normal",
     "categoryElevated": "Elevated",
     "categoryHypertension": "Hypertension",
-    "categoryUnknown": "Unknown"
+    "categoryUnknown": "Unknown",
+    "exportTitle": "Export data",
+    "exportSubtitle": "Export your data to JSON",
+    "sourceCodeTitle": "Source code",
+    "sourceCodeSubtitle": "View the app's source on GitHub"
 }

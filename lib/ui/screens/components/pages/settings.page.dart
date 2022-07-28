@@ -6,11 +6,25 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        context.locale.empty,
-        style: Theme.of(context).textTheme.headline6,
-      ),
+    return ListView(
+      shrinkWrap: true,
+      children: [
+        ListTile(
+          title: Text(context.locale.exportTitle),
+          subtitle: Text(
+            context.locale.exportSubtitle,
+            style: Theme.of(context).textTheme.bodyText2,
+          ),
+        ),
+        const Divider(),
+        ListTile(
+          title: Text(context.locale.sourceCodeTitle),
+          subtitle: Text(
+            context.locale.sourceCodeSubtitle,
+            style: Theme.of(context).textTheme.bodyText2,
+          ),
+        ),
+      ],
     );
   }
 }

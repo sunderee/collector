@@ -1,8 +1,12 @@
 {
     "appName": "Collector",
+    "bottomBarLabelHome": "Home",
+    "bottomBarLabelHistory": "History",
+    "bottomBarLabelSettings": "Settings",
     "systolic": "Systolic",
     "diastolic": "Diastolic",
     "pulse": "Pulse",
     "measurementBloodPressure": "mmHg",
-    "measurementPulse": "bpm"
+    "measurementPulse": "bpm",
+    "add": "ADD"
 }

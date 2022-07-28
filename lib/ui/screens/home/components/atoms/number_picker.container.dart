@@ -1,4 +1,4 @@
-import 'package:collector/ui/widgets/number_picker.dart';
+import 'package:collector/ui/screens/home/components/organisms/number_picker.dart';
 import 'package:flutter/material.dart';
 
 class NumberPickerContainer extends StatelessWidget {
@@ -24,12 +24,12 @@ class NumberPickerContainer extends StatelessWidget {
           title,
           style: Theme.of(context)
               .textTheme
-              .titleMedium
+              .subtitle1
               ?.copyWith(fontWeight: FontWeight.bold),
         ),
         Text(
           units,
-          style: Theme.of(context).textTheme.labelSmall,
+          style: Theme.of(context).textTheme.overline,
         ),
         NumberPicker(
           minValue: 20,

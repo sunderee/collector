@@ -1,6 +1,10 @@
 import 'package:collector/ui/app.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:intl/intl_standalone.dart';
 
-void main() {
+Future<void> main() async {
+  Intl.systemLocale = await findSystemLocale();
+
   runApp(const App());
 }

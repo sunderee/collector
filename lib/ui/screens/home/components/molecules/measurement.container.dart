@@ -1,4 +1,5 @@
-import 'package:collector/ui/screens/home/components/number_picker.container.dart';
+import 'package:collector/ui/screens/home/components/atoms/date.container.dart';
+import 'package:collector/ui/screens/home/components/atoms/number_picker.container.dart';
 import 'package:collector/utils/extensions/localization.ext.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,7 @@ class _MeasurementContainerState extends State<MeasurementContainer> {
   int _currentSystolic = 120;
   int _currentDiastolic = 70;
   int _currentPulse = 80;
+  DateTime _currentDate = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +48,20 @@ class _MeasurementContainerState extends State<MeasurementContainer> {
             onValueChanged: (int newPulse) => setState(
               () => _currentPulse = newPulse,
             ),
+          ),
+          const SizedBox(height: 24.0),
+          DateContainer(
+            date: _currentDate,
+            onDateChanged: (DateTime newDate) => setState(
+              () => _currentDate = newDate,
+            ),
+          ),
+          const SizedBox(height: 32.0),
+          MaterialButton(
+            color: Theme.of(context).colorScheme.primary,
+            minWidth: MediaQuery.of(context).size.width,
+            onPressed: () {},
+            child: Text(context.locale.add),
           ),
         ],
       ),

@@ -35,11 +35,11 @@ class _NumberPickerState extends State<NumberPicker> {
 
   @override
   void initState() {
+    super.initState();
     final initialOffset =
         (widget.value - widget.minValue) ~/ widget._step * _itemExtent;
     _controller = ScrollController(initialScrollOffset: initialOffset)
       ..addListener(_scrollListener);
-    super.initState();
   }
 
   @override
@@ -84,7 +84,7 @@ class _NumberPickerState extends State<NumberPicker> {
     final themeData = Theme.of(context);
     final defaultStyle = themeData.textTheme.bodyText2;
     final selectedStyle = themeData.textTheme.headline5?.copyWith(
-      color: themeData.colorScheme.secondary,
+      color: themeData.colorScheme.primary,
     );
 
     final value = _intValueFromIndex(index % _itemCount);

@@ -28,7 +28,9 @@ dependencies:
 
   # Utilities
   equatable: ^2.0.3
+  path_provider: ^2.0.11
   url_launcher: ^6.1.5
+  share_plus: ^4.0.10
 
 dev_dependencies:
   # Linter

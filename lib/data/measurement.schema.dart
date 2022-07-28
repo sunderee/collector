@@ -22,4 +22,19 @@ class MeasurementSchema {
     required this.pulse,
     required this.timestamp,
   });
+
+  factory MeasurementSchema.fromJson(Map<String, int> json) =>
+      MeasurementSchema(
+        systolic: json['systolic'] as int,
+        diastolic: json['diastolic'] as int,
+        pulse: json['pulse'] as int,
+        timestamp: json['timestamp'] as int,
+      );
+
+  Map<String, int> toJson() => {
+        'systolic': systolic,
+        'diastolic': diastolic,
+        'pulse': pulse,
+        'timestamp': timestamp,
+      };
 }

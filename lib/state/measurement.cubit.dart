@@ -1,6 +1,6 @@
 import 'package:collector/config.dart';
+import 'package:collector/data/measurement.model.dart';
 import 'package:collector/data/measurement.repository.dart';
-import 'package:collector/data/measurement.schema.dart';
 import 'package:collector/state/measurement.state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,7 +11,7 @@ class MeasurementCubit extends Cubit<MeasurementState> {
       : _repository = getIt.get<IMeasurementRepository>();
 
   Future<void> addMeasurement(
-    MeasurementSchema schema,
+    MeasurementModel schema,
     String errorMessage,
   ) async {
     emit(const MeasurementState.loading());

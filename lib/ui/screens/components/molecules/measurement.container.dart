@@ -1,8 +1,8 @@
-import 'package:collector/data/measurement.schema.dart';
+import 'package:collector/data/measurement.model.dart';
 import 'package:collector/state/measurement.cubit.dart';
 import 'package:collector/state/measurement.state.dart';
-import 'package:collector/ui/screens/home/components/atoms/containers/date.container.dart';
-import 'package:collector/ui/screens/home/components/atoms/containers/number_picker.container.dart';
+import 'package:collector/ui/screens/components/atoms/containers/date.container.dart';
+import 'package:collector/ui/screens/components/atoms/containers/number_picker.container.dart';
 import 'package:collector/utils/extensions/build_context.ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -73,7 +73,7 @@ class _MeasurementContainerState extends State<MeasurementContainer> {
               onPressed: () {
                 context.showSnackBar(context.locale.measurementAdded);
                 BlocProvider.of<MeasurementCubit>(context).addMeasurement(
-                  MeasurementSchema(
+                  MeasurementModel(
                     systolic: _currentSystolic,
                     diastolic: _currentDiastolic,
                     pulse: _currentPulse,

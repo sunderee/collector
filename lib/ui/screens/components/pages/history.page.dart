@@ -1,6 +1,6 @@
 import 'package:collector/state/measurement.cubit.dart';
 import 'package:collector/state/measurement.state.dart';
-import 'package:collector/ui/screens/home/components/atoms/history.item.dart';
+import 'package:collector/ui/screens/components/atoms/history.item.dart';
 import 'package:collector/utils/extensions/build_context.ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,15 +14,15 @@ class HistoryPage extends StatelessWidget {
       listener: (BuildContext context, MeasurementState state) {},
       builder: (BuildContext context, MeasurementState state) {
         if (state.status == StatusEnum.successful) {
-          final items = state.data;
-          return items.isNotEmpty
+          final models = state.data;
+          return models.isNotEmpty
               ? ListView.builder(
-                  itemCount: items.length,
+                  itemCount: models.length,
                   itemBuilder: (
                     BuildContext context,
                     int index,
                   ) =>
-                      HistoryItem(item: items[index]),
+                      HistoryItem(model: models[index]),
                 )
               : Center(
                   child: Text(

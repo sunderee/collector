@@ -1,9 +1,9 @@
 import 'package:hive_flutter/hive_flutter.dart';
 
-part 'measurement.schema.g.dart';
+part 'measurement.model.g.dart';
 
 @HiveType(typeId: 0)
-class MeasurementSchema {
+class MeasurementModel {
   @HiveField(0)
   final int systolic;
 
@@ -16,15 +16,14 @@ class MeasurementSchema {
   @HiveField(3)
   final int timestamp;
 
-  const MeasurementSchema({
+  const MeasurementModel({
     required this.systolic,
     required this.diastolic,
     required this.pulse,
     required this.timestamp,
   });
 
-  factory MeasurementSchema.fromJson(Map<String, int> json) =>
-      MeasurementSchema(
+  factory MeasurementModel.fromJson(Map<String, int> json) => MeasurementModel(
         systolic: json['systolic'] as int,
         diastolic: json['diastolic'] as int,
         pulse: json['pulse'] as int,

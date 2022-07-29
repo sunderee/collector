@@ -20,9 +20,10 @@ Future<void> initializeDependencies() async {
 
 Widget initializeState(Widget app) {
   return BlocProvider(
-    create: (_) => MeasurementCubit(
+    create: (BuildContext context) => MeasurementCubit(
       const MeasurementState.initial(),
-    ),
+      context,
+    )..read(),
     child: app,
   );
 }

@@ -3,8 +3,9 @@ import 'package:collector/data/measurement.model.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 abstract class IMeasurementRepository {
-  Future<void> storeNewMeasurement(MeasurementModel schema);
-  Iterable<MeasurementModel> getMeasurements();
+  Future<void> write(MeasurementModel schema);
+  Iterable<MeasurementModel> read();
+  Future<void> delete(String id);
 }
 
 class MeasurementRepository implements IMeasurementRepository {
@@ -13,9 +14,12 @@ class MeasurementRepository implements IMeasurementRepository {
   MeasurementRepository() : _box = getIt.get<Box<MeasurementModel>>();
 
   @override
-  Future<void> storeNewMeasurement(MeasurementModel schema) async =>
-      await _box.add(schema);
+  Future<void> write(MeasurementModel schema) async =>
+      await _box.put(schema.id, schema);
 
   @override
-  Iterable<MeasurementModel> getMeasurements() => _box.values;
+  Iterable<MeasurementModel> read() => _box.values;
+
+  @override
+  Future<void> delete(String id) async => await _box.delete(id);
 }

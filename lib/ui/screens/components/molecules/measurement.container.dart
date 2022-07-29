@@ -1,4 +1,3 @@
-import 'package:collector/data/measurement.model.dart';
 import 'package:collector/state/measurement.cubit.dart';
 import 'package:collector/state/measurement.state.dart';
 import 'package:collector/ui/screens/components/atoms/containers/date.container.dart';
@@ -72,14 +71,11 @@ class _MeasurementContainerState extends State<MeasurementContainer> {
               minWidth: MediaQuery.of(context).size.width,
               onPressed: () {
                 context.showSnackBar(context.locale.measurementAdded);
-                BlocProvider.of<MeasurementCubit>(context).addMeasurement(
-                  MeasurementModel(
-                    systolic: _currentSystolic,
-                    diastolic: _currentDiastolic,
-                    pulse: _currentPulse,
-                    timestamp: _currentDate.millisecondsSinceEpoch,
-                  ),
-                  context.locale.error,
+                BlocProvider.of<MeasurementCubit>(context).write(
+                  systolic: _currentSystolic,
+                  diastolic: _currentDiastolic,
+                  pulse: _currentPulse,
+                  timestamp: _currentDate,
                 );
               },
               child: Text(context.locale.add),

@@ -2,6 +2,7 @@
     "appName": "Collector",
     "error": "Something went wrong",
     "empty": "Nothing to see here",
+    "delete": "Delete",
     "bottomBarLabelHome": "Home",
     "bottomBarLabelHistory": "History",
     "bottomBarLabelSettings": "Settings",

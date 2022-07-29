@@ -1,7 +1,9 @@
 import 'package:collector/data/measurement.model.dart';
+import 'package:collector/state/measurement.cubit.dart';
 import 'package:collector/utils/extensions/build_context.ext.dart';
 import 'package:collector/utils/extensions/date_time.ext.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MeasurementDialog extends StatelessWidget {
   final MeasurementModel model;
@@ -47,8 +49,9 @@ class MeasurementDialog extends StatelessWidget {
       ),
       actions: [
         TextButton(
-          onPressed: () {},
-          child: Text('Delete'),
+          onPressed: () =>
+              BlocProvider.of<MeasurementCubit>(context).delete(model.id),
+          child: Text(context.locale.delete),
         ),
       ],
     );

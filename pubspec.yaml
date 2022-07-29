@@ -11,9 +11,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # Architecture
+  # Architecture & navigation
   flutter_bloc: ^8.0.1
   get_it: ^7.2.0
+  go_router: ^4.2.2
 
   # Internationalization
   intl: ^0.17.0

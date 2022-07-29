@@ -5,6 +5,9 @@ const String _repositoryURL = 'https://github.com/sunderee/collector';
 Future<void> launchRepositoryURL() async {
   final canLaunch = await canLaunchUrlString(_repositoryURL);
   if (canLaunch) {
-    await launchUrlString(_repositoryURL);
+    await launchUrlString(
+      _repositoryURL,
+      mode: LaunchMode.externalApplication,
+    );
   }
 }

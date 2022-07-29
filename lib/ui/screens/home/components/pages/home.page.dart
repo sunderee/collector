@@ -1,4 +1,4 @@
-import 'package:collector/ui/screens/components/molecules/measurement.container.dart';
+import 'package:collector/ui/screens/home/components/molecules/measurement.container.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {

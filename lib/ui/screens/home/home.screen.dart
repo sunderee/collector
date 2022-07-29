@@ -1,8 +1,8 @@
 import 'package:collector/state/measurement.cubit.dart';
-import 'package:collector/ui/screens/components/molecules/bottom_bar.dart';
-import 'package:collector/ui/screens/components/pages/history.page.dart';
-import 'package:collector/ui/screens/components/pages/home.page.dart';
-import 'package:collector/ui/screens/components/pages/settings.page.dart';
+import 'package:collector/ui/screens/home/components/molecules/bottom_bar.dart';
+import 'package:collector/ui/screens/home/components/pages/history.page.dart';
+import 'package:collector/ui/screens/home/components/pages/home.page.dart';
+import 'package:collector/ui/screens/home/components/pages/settings.page.dart';
 import 'package:collector/utils/extensions/build_context.ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,12 +20,23 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final _pageController = PageController();
 
+  int _currentIndex = 0;
+
+  List<String> get _appBarTitles => [
+        context.locale.bottomBarLabelHome,
+        context.locale.bottomBarLabelHistory,
+        context.locale.bottomBarLabelSettings,
+      ];
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       BlocProvider.of<MeasurementCubit>(context)
           .retrieveMeasurements(context.locale.error);
+      _pageController.addListener(() => setState(
+            () => _currentIndex = _pageController.page?.toInt() ?? 0,
+          ));
     });
   }
 
@@ -39,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.locale.appName),
+        title: Text(_appBarTitles[_currentIndex]),
       ),
       body: PageView(
         controller: _pageController,

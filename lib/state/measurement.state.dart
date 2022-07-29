@@ -1,16 +1,16 @@
-import 'package:collector/data/measurement.schema.dart';
+import 'package:collector/data/measurement.model.dart';
 import 'package:equatable/equatable.dart';
 
 enum StatusEnum { initial, loading, successful, failed }
 
 class MeasurementState extends Equatable {
   final StatusEnum status;
-  final List<MeasurementSchema> data;
+  final List<MeasurementModel> data;
   final String errorMessage;
 
   const MeasurementState._({
     required this.status,
-    this.data = const <MeasurementSchema>[],
+    this.data = const <MeasurementModel>[],
     this.errorMessage = '',
   });
 
@@ -18,7 +18,7 @@ class MeasurementState extends Equatable {
 
   const MeasurementState.loading() : this._(status: StatusEnum.loading);
 
-  const MeasurementState.successful(List<MeasurementSchema> data)
+  const MeasurementState.successful(List<MeasurementModel> data)
       : this._(
           status: StatusEnum.successful,
           data: data,
@@ -33,7 +33,7 @@ class MeasurementState extends Equatable {
   @override
   List<Object?> get props => [
         status,
-        List<MeasurementSchema>.from(data),
+        List<MeasurementModel>.from(data),
         errorMessage,
       ];
 }

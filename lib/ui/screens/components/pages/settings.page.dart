@@ -1,5 +1,3 @@
-import 'package:collector/config.dart';
-import 'package:collector/data/measurement.repository.dart';
 import 'package:collector/utils/extensions/build_context.ext.dart';
 import 'package:collector/utils/helpers/json.helper.dart';
 import 'package:collector/utils/helpers/url_launcher.helper.dart';
@@ -21,9 +19,7 @@ class SettingsPage extends StatelessWidget {
             style: Theme.of(context).textTheme.bodyText2,
           ),
           onTap: () async {
-            final file = await jsonFileExporter(
-              getIt.get<IMeasurementRepository>().getMeasurements().toList(),
-            );
+            final file = await jsonFileExporter();
             Share.shareFiles([file.path]);
           },
         ),

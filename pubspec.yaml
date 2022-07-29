@@ -2,7 +2,7 @@ name: collector
 description: No ads, open-source blood pressure diary app
 
 publish_to: 'none'
-version: 0.0.1+1
+version: 0.0.2+3
 
 environment:
   sdk: ">=2.17.6 <3.0.0"
@@ -52,7 +52,7 @@ flutter_icons:
   ios: false
   image_path: assets/app_icon.png
   adaptive_icon_foreground: assets/app_icon.png
-  adaptive_icon_background: "#FF6978"
+  adaptive_icon_background: "#8DAFCE"
 
 flutter:
   uses-material-design: true

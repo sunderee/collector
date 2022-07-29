@@ -49,8 +49,10 @@ class MeasurementDialog extends StatelessWidget {
       ),
       actions: [
         TextButton(
-          onPressed: () =>
-              BlocProvider.of<MeasurementCubit>(context).delete(model.id),
+          onPressed: () {
+            BlocProvider.of<MeasurementCubit>(context).delete(model.id);
+            Navigator.pop(context);
+          },
           child: Text(context.locale.delete),
         ),
       ],

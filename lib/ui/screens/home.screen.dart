@@ -29,11 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _pageController.addListener(() => setState(
-            () => _currentIndex = _pageController.page?.toInt() ?? 0,
-          ));
-    });
+    _pageController.addListener(() => setState(
+          () => _currentIndex = _pageController.page?.toInt() ?? 0,
+        ));
   }
 
   @override

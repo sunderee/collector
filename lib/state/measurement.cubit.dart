@@ -41,7 +41,9 @@ class MeasurementCubit extends Cubit<MeasurementState> {
 
   void read() {
     try {
-      final measurements = _repository.read().toList();
+      final measurements = _repository.read().toList()
+        ..sort((MeasurementModel first, MeasurementModel second) =>
+            first.timestamp.compareTo(second.timestamp));
       emit(MeasurementState.successful(measurements));
     } catch (_) {
       emit(MeasurementState.failed(context.locale.error));

@@ -10,5 +10,8 @@ Future<void> main() async {
   Intl.systemLocale = await findSystemLocale();
   await initializeDependencies();
 
-  runApp(initializeState(const App()));
+  await Future<void>.delayed(
+    const Duration(milliseconds: 200),
+    () => runApp(initializeState(const App())),
+  );
 }

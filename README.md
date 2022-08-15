@@ -19,3 +19,5 @@ Health-related data is private data. It's between you and your physician. The so
 No ads: privacy over money. This is not an app from which I plan on making a dime. I made it for myself, and I'm putting it in public domain for everyone else to use/modify as well.
 
 Launcher icon: [Pulse SVG Vector](https://www.svgrepo.com/svg/141568/pulse).
+
+<a href='https://play.google.com/store/apps/details?id=com.peteralexbizjak.collector&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>

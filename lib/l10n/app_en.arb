@@ -1,24 +1,3 @@
 {
-    "appName": "Collector",
-    "error": "Something went wrong",
-    "empty": "Nothing to see here",
-    "delete": "Delete",
-    "bottomBarLabelHome": "Home",
-    "bottomBarLabelHistory": "History",
-    "bottomBarLabelSettings": "Settings",
-    "systolic": "Systolic",
-    "diastolic": "Diastolic",
-    "pulse": "Pulse",
-    "measurementBloodPressure": "mmHg",
-    "measurementPulse": "bpm",
-    "add": "ADD",
-    "measurementAdded": "Measurement added",
-    "categoryNormal": "Normal",
-    "categoryElevated": "Elevated",
-    "categoryHypertension": "Hypertension",
-    "categoryUnknown": "Unknown",
-    "exportTitle": "Export data",
-    "exportSubtitle": "Export your data to JSON",
-    "sourceCodeTitle": "Source code",
-    "sourceCodeSubtitle": "View the app's source on GitHub"
+    "appName": "Collector"
 }

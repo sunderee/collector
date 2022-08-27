@@ -1,5 +1,12 @@
 {
     "appName": "Collector",
     "commonNothingToSeeHere": "Nothing to see here!",
-    "commonNewRecord": "New record"
+    "commonNewRecord": "New record",
+    "feelingHappiness": "Happiness",
+    "feelingSadness": "Sadness",
+    "feelingStressOrAnxiety": "Stress or anxiety",
+    "feelingAnticipation": "Anticipation",
+    "feelingLoveOrJoy": "Love or joy",
+    "feelingAnger": "Anger",
+    "screenNewRecordChooseEmotion": "(Optional) choose your current mood"
 }

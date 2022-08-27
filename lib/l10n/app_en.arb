@@ -1,3 +1,5 @@
 {
-    "appName": "Collector"
+    "appName": "Collector",
+    "commonNothingToSeeHere": "Nothing to see here!",
+    "commonNewRecord": "New record"
 }

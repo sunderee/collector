@@ -1,4 +1,4 @@
-import 'package:collector/ui/screens/home/home.screen.dart';
+import 'package:collector/ui/router.dart';
 import 'package:collector/ui/themes/app.theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -20,8 +20,11 @@ class App extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
 
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
+      routeInformationProvider: router.routeInformationProvider,
+      routeInformationParser: router.routeInformationParser,
+      routerDelegate: router.routerDelegate,
       theme: AppTheme.lightAppTheme(context),
       darkTheme: AppTheme.darkAppTheme(context),
       localizationsDelegates: const [
@@ -31,7 +34,6 @@ class App extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [Locale('en')],
-      home: const HomeScreen(),
     );
   }
 }

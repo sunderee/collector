@@ -3,7 +3,12 @@ import 'package:collector/ui/screens/new_record/components/atoms/emotion.tile.da
 import 'package:flutter/material.dart';
 
 class EmotionsList extends StatefulWidget {
-  const EmotionsList({super.key});
+  final ValueSetter<EmotionEnum?> onEmotionSelected;
+
+  const EmotionsList({
+    super.key,
+    required this.onEmotionSelected,
+  });
 
   @override
   State<EmotionsList> createState() => _EmotionsListState();
@@ -31,13 +36,15 @@ class _EmotionsListState extends State<EmotionsList> {
           emoji: emotions[index].toEmotionEmoji ?? '',
           emotion: emotions[index].toEmotionText(context) ?? '',
           isSelected: _selectedIndex == index,
-          onPressed: () => setState(() {
+          onPressed: () {
             if (_selectedIndex == index) {
-              _selectedIndex = null;
+              setState(() => _selectedIndex = null);
+              widget.onEmotionSelected(null);
             } else {
-              _selectedIndex = index;
+              setState(() => _selectedIndex = index);
+              widget.onEmotionSelected(emotions[index]);
             }
-          }),
+          },
         ),
       ),
     );

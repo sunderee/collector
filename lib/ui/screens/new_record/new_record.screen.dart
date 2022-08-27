@@ -1,4 +1,6 @@
+import 'package:collector/data/enums/emotion.enum.dart';
 import 'package:collector/ui/screens/new_record/components/molecules/emotions.list.dart';
+import 'package:collector/ui/screens/new_record/components/molecules/measurements.container.dart';
 import 'package:collector/utils/extensions/build_context.ext.dart';
 import 'package:flutter/material.dart';
 
@@ -21,9 +23,21 @@ class NewRecordScreen extends StatelessWidget {
           children: [
             Text(
               context.locale.screenNewRecordChooseEmotion,
+              textAlign: TextAlign.center,
               style: theme.titleMedium,
             ),
-            const EmotionsList(),
+            EmotionsList(
+              onEmotionSelected: (EmotionEnum? emotion) {},
+            ),
+            const SizedBox(height: 32.0),
+            MeasurementsContainer(
+              onMeasurementSelected: (
+                int systolic,
+                int diastolic,
+                int pulse,
+                DateTime date,
+              ) {},
+            )
           ],
         ),
       ),

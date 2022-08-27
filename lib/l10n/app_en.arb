@@ -8,5 +8,12 @@
     "feelingAnticipation": "Anticipation",
     "feelingLoveOrJoy": "Love or joy",
     "feelingAnger": "Anger",
-    "screenNewRecordChooseEmotion": "(Optional) choose your current mood"
+    "screenNewRecordChooseEmotion": "(Optional) choose your current mood",
+    "screenNewRecordInputData": "Scroll to select blood pressure and pulse measurements",
+    "screenNewRecordSystolic": "Systolic",
+    "screenNewRecordDiastolic": "Diastolic",
+    "screenNewRecordPulse": "Pulse",
+    "screenNewRecordMeasurementBloodPressure": "mmHg",
+    "screenNewRecordMeasurementPulse": "bpm",
+    "screenNewRecordAdd": "ADD"
 }

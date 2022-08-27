@@ -4,13 +4,17 @@ No ads, open-source blood pressure diary app.
 
 ## Usage
 
-Run `setup.sh` to install dependencies and run code generation tasks.
+Make sure you have the latest stable version of Flutter installed on your system. Run `setup.sh` to install dependencies and run code generation tasks.
 
 ```
 $ bash setup.sh
+
+# Alternatively, you can do it yourself
+$ flutter pub get
+$ flutter pub run build_runner build --delete-conflicting-outputs
 ```
 
-You can now run the app with `flutter run`.
+You can now run the app with `flutter run`. Currently, we only support Android.
 
 ## Motivation & Acknowledgement
 

@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: const Empty(),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => context.go(AppRoute.newRecord.routePath),
+        onPressed: () => context.push(AppRoute.newRecord.routePath),
         label: Text(context.locale.commonNewRecord),
         icon: const Icon(Icons.add),
       ),

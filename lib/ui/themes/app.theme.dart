@@ -22,9 +22,6 @@ class AppTheme {
           centerTitle: true,
           color: ColorTheme.colorBackgroundDark,
         ),
-        buttonTheme: const ButtonThemeData(
-          textTheme: ButtonTextTheme.primary,
-        ),
       );
 
   const AppTheme._();

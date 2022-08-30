@@ -1,4 +1,3 @@
-import 'package:collector/ui/themes/color.theme.dart';
 import 'package:collector/utils/extensions/build_context.ext.dart';
 import 'package:flutter/material.dart';
 
@@ -11,10 +10,10 @@ class Empty extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Icon(
+          Icon(
             Icons.folder_open,
             size: 48.0,
-            color: ColorTheme.colorProduct,
+            color: Theme.of(context).colorScheme.primary,
           ),
           Text(
             context.locale.commonNothingToSeeHere,

@@ -6,6 +6,7 @@ import 'package:loggy/loggy.dart';
 abstract class IMeasurementRepository {
   Future<int> storeMeasurement(Measurement schema);
   Future<List<Measurement>> getAll();
+  Future<bool> delete(int id);
 }
 
 class MeasurementRepository implements IMeasurementRepository {
@@ -29,6 +30,14 @@ class MeasurementRepository implements IMeasurementRepository {
     return _isar.txn((Isar database) {
       logDebug('Retrieving measurements...');
       return database.measurements.where().sortByTimestampDesc().findAll();
+    });
+  }
+
+  @override
+  Future<bool> delete(int id) async {
+    logDebug('Delete a measurement: $id');
+    return _isar.writeTxn((Isar database) {
+      return database.measurements.delete(id);
     });
   }
 }

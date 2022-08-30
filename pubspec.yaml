@@ -23,6 +23,7 @@ dependencies:
 
   # UI-related
   google_fonts: ^3.0.1
+  flutter_slidable: ^2.0.0
 
   # Local persistence
   isar: ^2.5.0

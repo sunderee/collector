@@ -38,4 +38,9 @@ class MeasurementCubit extends Cubit<MeasurementState> {
     );
     fetchMeasurements();
   }
+
+  Future<void> deleteMeasurement(int id) async {
+    await _repository.delete(id);
+    fetchMeasurements();
+  }
 }

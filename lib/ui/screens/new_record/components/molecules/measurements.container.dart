@@ -2,6 +2,7 @@ import 'package:collector/ui/screens/new_record/components/molecules/date.contai
 import 'package:collector/ui/screens/new_record/components/molecules/number_picker.container.dart';
 import 'package:collector/utils/extensions/build_context.ext.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 typedef OnMeasurementSelectedCallback = void Function(
   int systolic,
@@ -69,16 +70,33 @@ class _MeasurementsContainerState extends State<MeasurementsContainer> {
           MaterialButton(
             color: Theme.of(context).colorScheme.primary,
             minWidth: MediaQuery.of(context).size.width,
-            onPressed: () => widget.onMeasurementSelected(
-              _currentSystolic,
-              _currentDiastolic,
-              _currentPulse,
-              _currentDate,
-            ),
+            onPressed: () {
+              widget.onMeasurementSelected(
+                _currentSystolic,
+                _currentDiastolic,
+                _currentPulse,
+                _currentDate,
+              );
+              _showMeasurementDialog();
+            },
             child: Text(context.locale.screenNewRecordAdd),
           ),
         ],
       ),
     );
   }
+
+  void _showMeasurementDialog() => showDialog<void>(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          title: Text(context.locale.screenNewRecordRecordAddedTitle),
+          content: Text(context.locale.screenNewRecordRecordAddedSubtitle),
+          actions: [
+            TextButton(
+              onPressed: () => context.pop(),
+              child: Text(context.locale.commonOK),
+            ),
+          ],
+        ),
+      );
 }

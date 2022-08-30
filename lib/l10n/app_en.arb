@@ -2,6 +2,7 @@
     "appName": "Collector",
     "commonNothingToSeeHere": "Nothing to see here!",
     "commonNewRecord": "New record",
+    "commonOK": "OK",
     "feelingHappiness": "Happiness",
     "feelingSadness": "Sadness",
     "feelingStressOrAnxiety": "Stress or anxiety",
@@ -15,5 +16,7 @@
     "screenNewRecordPulse": "Pulse",
     "screenNewRecordMeasurementBloodPressure": "mmHg",
     "screenNewRecordMeasurementPulse": "bpm",
-    "screenNewRecordAdd": "ADD"
+    "screenNewRecordAdd": "ADD",
+    "screenNewRecordRecordAddedTitle": "Done!",
+    "screenNewRecordRecordAddedSubtitle": "Record has been successfully stored locally on your device. You can view/update/delete it later."
 }

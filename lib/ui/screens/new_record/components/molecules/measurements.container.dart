@@ -1,6 +1,5 @@
 import 'package:collector/ui/screens/new_record/components/molecules/date.container.dart';
 import 'package:collector/ui/screens/new_record/components/molecules/number_picker.container.dart';
-import 'package:collector/ui/themes/color.theme.dart';
 import 'package:collector/utils/extensions/build_context.ext.dart';
 import 'package:flutter/material.dart';
 
@@ -68,7 +67,7 @@ class _MeasurementsContainerState extends State<MeasurementsContainer> {
           ),
           const SizedBox(height: 32.0),
           MaterialButton(
-            color: ColorTheme.colorProduct,
+            color: Theme.of(context).colorScheme.primary,
             minWidth: MediaQuery.of(context).size.width,
             onPressed: () => widget.onMeasurementSelected(
               _currentSystolic,

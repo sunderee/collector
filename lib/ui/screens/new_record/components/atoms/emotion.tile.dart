@@ -1,4 +1,3 @@
-import 'package:collector/ui/themes/color.theme.dart';
 import 'package:flutter/material.dart';
 
 class EmotionTile extends StatelessWidget {
@@ -17,15 +16,15 @@ class EmotionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextTheme theme = Theme.of(context).textTheme;
+    final ThemeData theme = Theme.of(context);
     return SizedBox(
       height: 48.0,
       child: Card(
         elevation: 0.0,
         clipBehavior: Clip.antiAlias,
         color: isSelected
-            ? ColorTheme.colorProduct
-            : ColorTheme.colorProduct.withOpacity(0.1),
+            ? theme.colorScheme.primary
+            : theme.colorScheme.primary.withOpacity(0.1),
         child: InkWell(
           onTap: onPressed,
           child: Padding(
@@ -35,12 +34,12 @@ class EmotionTile extends StatelessWidget {
               children: [
                 Text(
                   emoji,
-                  style: theme.bodySmall,
+                  style: theme.textTheme.bodySmall,
                 ),
                 const SizedBox(width: 4.0),
                 Text(
                   emotion,
-                  style: theme.bodySmall,
+                  style: theme.textTheme.bodySmall,
                 ),
               ],
             ),

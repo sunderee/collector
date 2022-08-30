@@ -26,6 +26,7 @@ class NewRecordScreen extends StatelessWidget {
               textAlign: TextAlign.center,
               style: theme.titleMedium,
             ),
+            const SizedBox(height: 8.0),
             EmotionsList(
               onEmotionSelected: (EmotionEnum? emotion) {},
             ),

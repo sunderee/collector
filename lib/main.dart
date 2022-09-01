@@ -1,17 +1,23 @@
+import 'dart:async';
+
 import 'package:collector/config.dart';
+import 'package:collector/state/measurement.cubit.dart';
+import 'package:collector/state/measurement.state.dart';
 import 'package:collector/ui/app.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:intl/intl_standalone.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+void main() {
+  runZoned(() async {
+    WidgetsFlutterBinding.ensureInitialized();
 
-  Intl.systemLocale = await findSystemLocale();
-  await initializeDependencies();
-
-  await Future<void>.delayed(
-    const Duration(milliseconds: 200),
-    () => runApp(initializeState(const App())),
-  );
+    await initializeDependencies();
+    runApp(
+      BlocProvider<MeasurementCubit>(
+        create: (_) => MeasurementCubit(const MeasurementState.loading())
+          ..fetchMeasurements(),
+        child: const App(),
+      ),
+    );
+  });
 }

@@ -1,4 +1,4 @@
-import 'package:collector/ui/screens/components/organisms/number_picker.dart';
+import 'package:collector/ui/screens/new_record/components/organisms/number_picker.dart';
 import 'package:flutter/material.dart';
 
 class NumberPickerContainer extends StatelessWidget {

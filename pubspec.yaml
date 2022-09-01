@@ -1,8 +1,8 @@
 name: collector
 description: No ads, open-source blood pressure diary app
 
-publish_to: 'none'
-version: 0.1.3+7
+publish_to: "none"
+version: 0.2.0+8
 
 environment:
   sdk: ">=2.17.6 <3.0.0"
@@ -11,9 +11,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # Architecture
-  flutter_bloc: ^8.0.1
+  # Architecture & routing
+  flutter_bloc: ^8.1.1
   get_it: ^7.2.0
+  go_router: ^4.3.0
 
   # Internationalization
   intl: ^0.17.0
@@ -22,35 +23,34 @@ dependencies:
 
   # UI-related
   google_fonts: ^3.0.1
+  flutter_slidable: ^2.0.0
 
   # Local persistence
-  hive_flutter: ^1.1.0
+  isar: ^2.5.0
+  isar_flutter_libs: ^2.5.0
 
   # Utilities
-  equatable: ^2.0.3
   path_provider: ^2.0.11
-  url_launcher: ^6.1.5
-  share_plus: ^4.0.10
+  equatable: ^2.0.5
+  meta: ^1.7.0
 
 dev_dependencies:
   # Linter
   flutter_lints: ^2.0.1
 
-  # Build runner and generator(s)
+  # Build runner and generators
   build_runner: ^2.2.0
-  hive_generator: ^1.1.3
-
-  # Launcher icon generator
-  flutter_launcher_icons: ^0.9.3
+  isar_generator: ^2.5.0
+  flutter_launcher_icons: ^0.10.0
 
   # Testing
   flutter_test:
     sdk: flutter
-  
+
 flutter_icons:
   android: ic_launcher
-  ios: false
   image_path: assets/app_icon.png
+  min_sdk_android: 26
   adaptive_icon_foreground: assets/app_icon.png
   adaptive_icon_background: "#8DAFCE"
 

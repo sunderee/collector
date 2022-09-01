@@ -29,7 +29,7 @@ class InputWidget extends StatelessWidget {
           decoration: InputDecoration(
             border: InputBorder.none,
             isDense: true,
-            hintText: context.locale.screenDetailsInputHint,
+            hintText: context.locale.commonInputHint,
           ),
         ),
       ],

@@ -62,7 +62,7 @@ class _UpdateDialogState extends State<UpdateDialog> {
             minWidth: MediaQuery.of(context).size.width,
             color: Theme.of(context).colorScheme.primary,
             child: Text(
-              context.locale.screenDetailsUpdate,
+              context.locale.commonUpdate,
               style: const TextStyle(color: Colors.black87),
             ),
             onPressed: () {

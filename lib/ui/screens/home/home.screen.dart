@@ -17,9 +17,13 @@ class HomeScreen extends StatelessWidget {
       ),
       body: const MeasurementsList(),
       floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: Theme.of(context).colorScheme.primary,
         onPressed: () => context.push(AppRoute.newRecord.routePath),
-        label: Text(context.locale.commonNewRecord),
-        icon: const Icon(Icons.add),
+        label: Text(
+          context.locale.commonNewRecord,
+          style: const TextStyle(color: Colors.black87),
+        ),
+        icon: const Icon(Icons.add, color: Colors.black87),
       ),
     );
   }

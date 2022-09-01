@@ -14,7 +14,7 @@ class MeasurementCubit extends Cubit<MeasurementState> {
   Future<void> fetchMeasurements() async {
     emit(const MeasurementState.loading());
     try {
-      final data = await _repository.getAll();
+      final data = await _repository.read();
       emit(MeasurementState.successful(data));
     } catch (_) {
       emit(const MeasurementState.failed());
@@ -28,7 +28,7 @@ class MeasurementCubit extends Cubit<MeasurementState> {
     required int pulse,
     required DateTime date,
   }) async {
-    await _repository.storeMeasurement(
+    await _repository.create(
       Measurement()
         ..emotion = emotion
         ..systolic = systolic
@@ -41,6 +41,11 @@ class MeasurementCubit extends Cubit<MeasurementState> {
 
   Future<void> deleteMeasurement(int id) async {
     await _repository.delete(id);
+    fetchMeasurements();
+  }
+
+  Future<void> updateMeasurement(Measurement newMeasurement) async {
+    await _repository.update(newMeasurement);
     fetchMeasurements();
   }
 }

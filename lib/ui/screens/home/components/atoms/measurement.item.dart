@@ -1,14 +1,13 @@
 import 'package:collector/data/schemas/measurement.schema.dart';
 import 'package:collector/state/measurement.cubit.dart';
-import 'package:collector/ui/router.dart';
 import 'package:collector/ui/screens/home/components/atoms/systolic_diastolic.widget.dart';
+import 'package:collector/ui/screens/home/components/organisms/update.dialog.dart';
 import 'package:collector/utils/extensions/build_context.ext.dart';
 import 'package:collector/utils/extensions/date_time.ext.dart';
 import 'package:collector/utils/helpers/categorization.helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:go_router/go_router.dart';
 
 class MeasurementItem extends StatelessWidget {
   final Measurement data;
@@ -52,9 +51,11 @@ class MeasurementItem extends StatelessWidget {
         trailing: data.emotion != null
             ? Text(data.emotion?.toEmotionEmoji ?? '')
             : null,
-        onTap: () => context.push(
-          AppRoute.details.routePath,
-          extra: data.timestamp.formatToHumanReadable,
+        onTap: () => showDialog<void>(
+          context: context,
+          builder: (BuildContext context) => Dialog(
+            child: UpdateDialog(data: data),
+          ),
         ),
       ),
     );

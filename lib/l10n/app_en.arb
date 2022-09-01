@@ -22,5 +22,7 @@
     "screenNewRecordMeasurementPulse": "bpm",
     "screenNewRecordAdd": "ADD",
     "screenNewRecordRecordAddedTitle": "Done!",
-    "screenNewRecordRecordAddedSubtitle": "Record has been successfully stored locally on your device. You can view/update/delete it later."
+    "screenNewRecordRecordAddedSubtitle": "Record has been successfully stored locally on your device. You can view/update/delete it later.",
+    "screenDetailsInputHint": "123",
+    "screenDetailsUpdate": "Update"
 }

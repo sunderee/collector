@@ -79,7 +79,10 @@ class _MeasurementsContainerState extends State<MeasurementsContainer> {
               );
               _showMeasurementDialog();
             },
-            child: Text(context.locale.screenNewRecordAdd),
+            child: Text(
+              context.locale.screenNewRecordAdd,
+              style: const TextStyle(color: Colors.black87),
+            ),
           ),
         ],
       ),

@@ -3,6 +3,7 @@ import 'package:collector/ui/screens/home/components/molecules/measurements.list
 import 'package:collector/utils/extensions/build_context.ext.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,6 +15,15 @@ class HomeScreen extends StatelessWidget {
         title: Text(
           context.locale.appName,
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.code),
+            onPressed: () => launchUrlString(
+              'https://github.com/sunderee/collector',
+              mode: LaunchMode.externalApplication,
+            ),
+          ),
+        ],
       ),
       body: const MeasurementsList(),
       floatingActionButton: FloatingActionButton.extended(

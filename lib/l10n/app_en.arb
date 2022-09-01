@@ -2,7 +2,10 @@
     "appName": "Collector",
     "commonNothingToSeeHere": "Nothing to see here!",
     "commonNewRecord": "New record",
+    "commonUpdate": "Update",
+    "commonCancel": "Cancel",
     "commonOK": "OK",
+    "commonInputHint": "123",
     "categoryNormal": "Normal",
     "categoryElevated": "Elevated",
     "categoryHypertension": "Hypertension",
@@ -13,6 +16,8 @@
     "feelingAnticipation": "Anticipation",
     "feelingLoveOrJoy": "Love or joy",
     "feelingAnger": "Anger",
+    "screenHomeExportTitle": "Export",
+    "screenHomeExportContents": "A JSON file will be generated with all of the measurements you've taken in the application. It's your job to store and keep it safe.",
     "screenNewRecordChooseEmotion": "(Optional) choose your current mood",
     "screenNewRecordInputData": "Scroll to select blood pressure and pulse measurements",
     "screenNewRecordSystolic": "Systolic",
@@ -22,7 +27,5 @@
     "screenNewRecordMeasurementPulse": "bpm",
     "screenNewRecordAdd": "ADD",
     "screenNewRecordRecordAddedTitle": "Done!",
-    "screenNewRecordRecordAddedSubtitle": "Record has been successfully stored locally on your device. You can view/update/delete it later.",
-    "screenDetailsInputHint": "123",
-    "screenDetailsUpdate": "Update"
+    "screenNewRecordRecordAddedSubtitle": "Record has been successfully stored locally on your device. You can view/update/delete it later."
 }

@@ -1,11 +1,12 @@
 import 'package:collector/config.dart';
 import 'package:collector/data/schemas/measurement.schema.dart';
 import 'package:isar/isar.dart';
-import 'package:loggy/loggy.dart';
 
 abstract class IMeasurementRepository {
-  Future<int> storeMeasurement(Measurement schema);
-  Future<List<Measurement>> getAll();
+  Future<int> create(Measurement schema);
+  Future<List<Measurement>> read();
+  Future<int> update(Measurement newMeasurement);
+  Future<bool> delete(int id);
 }
 
 class MeasurementRepository implements IMeasurementRepository {
@@ -14,8 +15,7 @@ class MeasurementRepository implements IMeasurementRepository {
   MeasurementRepository() : _isar = getIt.get<Isar>();
 
   @override
-  Future<int> storeMeasurement(Measurement schema) async {
-    logDebug('Adding a measurement: ${schema.toString()}');
+  Future<int> create(Measurement schema) async {
     return _isar.writeTxn((Isar database) {
       return database.measurements.put(
         schema,
@@ -25,10 +25,23 @@ class MeasurementRepository implements IMeasurementRepository {
   }
 
   @override
-  Future<List<Measurement>> getAll() async {
+  Future<List<Measurement>> read() async {
     return _isar.txn((Isar database) {
-      logDebug('Retrieving measurements...');
       return database.measurements.where().sortByTimestampDesc().findAll();
+    });
+  }
+
+  @override
+  Future<int> update(Measurement newMeasurement) async {
+    return _isar.writeTxn((Isar database) async {
+      return database.measurements.put(newMeasurement, replaceOnConflict: true);
+    });
+  }
+
+  @override
+  Future<bool> delete(int id) async {
+    return _isar.writeTxn((Isar database) {
+      return database.measurements.delete(id);
     });
   }
 }

@@ -20,6 +20,6 @@ final router = GoRouter(
     GoRoute(
       path: AppRoute.newRecord.routePath,
       builder: (_, __) => const NewRecordScreen(),
-    )
+    ),
   ],
 );

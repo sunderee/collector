@@ -28,7 +28,7 @@ class MeasurementItem extends StatelessWidget {
           SlidableAction(
             onPressed: (BuildContext context) =>
                 BlocProvider.of<MeasurementCubit>(context)
-                    .deleteMeasurement(data.id ?? 0),
+                    .deleteMeasurement(data.id),
             foregroundColor: Colors.white,
             backgroundColor: theme.colorScheme.error,
             icon: Icons.delete,

@@ -1,5 +1,6 @@
 import 'package:collector/ui/router.dart';
 import 'package:collector/ui/themes/app.theme.dart';
+import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -20,20 +21,24 @@ class App extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
 
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      routeInformationProvider: router.routeInformationProvider,
-      routeInformationParser: router.routeInformationParser,
-      routerDelegate: router.routerDelegate,
-      theme: AppTheme.darkAppTheme(context),
-      darkTheme: AppTheme.darkAppTheme(context),
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [Locale('en')],
+    return DynamicColorBuilder(
+      builder: (_, ColorScheme? darkDynamic) {
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          routeInformationProvider: router.routeInformationProvider,
+          routeInformationParser: router.routeInformationParser,
+          routerDelegate: router.routerDelegate,
+          theme: AppTheme.appTheme(darkDynamic, context),
+          darkTheme: AppTheme.appTheme(darkDynamic, context),
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: const [Locale('en')],
+        );
+      },
     );
   }
 }

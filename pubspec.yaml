@@ -2,7 +2,7 @@ name: collector
 description: No ads, open-source blood pressure diary app
 
 publish_to: "none"
-version: 0.2.1+9
+version: 0.3.0+11
 
 environment:
   sdk: ">=2.18.0 <3.0.0"
@@ -14,7 +14,7 @@ dependencies:
   # Architecture & routing
   flutter_bloc: ^8.1.1
   get_it: ^7.2.0
-  go_router: ^4.3.0
+  go_router: ^5.0.1
 
   # Internationalization
   intl: ^0.17.0
@@ -26,13 +26,13 @@ dependencies:
   flutter_slidable: ^2.0.0
 
   # Local persistence
-  isar: ^2.5.0
-  isar_flutter_libs: ^2.5.0
+  isar: ^3.0.0
+  isar_flutter_libs: ^3.0.0
 
   # Utilities
   path_provider: ^2.0.11
   url_launcher: ^6.1.5
-  share_plus: ^4.0.10+1
+  share_plus: ^4.4.0
   equatable: ^2.0.5
   meta: ^1.8.0
 
@@ -41,8 +41,8 @@ dev_dependencies:
   flutter_lints: ^2.0.1
 
   # Build runner and generators
-  build_runner: ^2.2.0
-  isar_generator: ^2.5.0
+  build_runner: ^2.2.1
+  isar_generator: ^3.0.0
   flutter_launcher_icons: ^0.10.0
 
 flutter_icons:

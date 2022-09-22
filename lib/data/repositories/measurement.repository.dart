@@ -15,33 +15,18 @@ class MeasurementRepository implements IMeasurementRepository {
   MeasurementRepository() : _isar = getIt.get<Isar>();
 
   @override
-  Future<int> create(Measurement schema) async {
-    return _isar.writeTxn((Isar database) {
-      return database.measurements.put(
-        schema,
-        replaceOnConflict: true,
-      );
-    });
-  }
+  Future<int> create(Measurement schema) async =>
+      _isar.writeTxn(() => _isar.measurements.put(schema));
 
   @override
-  Future<List<Measurement>> read() async {
-    return _isar.txn((Isar database) {
-      return database.measurements.where().sortByTimestampDesc().findAll();
-    });
-  }
+  Future<List<Measurement>> read() async => _isar
+      .txn(() => _isar.measurements.where().sortByTimestampDesc().findAll());
 
   @override
-  Future<int> update(Measurement newMeasurement) async {
-    return _isar.writeTxn((Isar database) async {
-      return database.measurements.put(newMeasurement, replaceOnConflict: true);
-    });
-  }
+  Future<int> update(Measurement newMeasurement) async =>
+      _isar.writeTxn(() async => _isar.measurements.put(newMeasurement));
 
   @override
-  Future<bool> delete(int id) async {
-    return _isar.writeTxn((Isar database) {
-      return database.measurements.delete(id);
-    });
-  }
+  Future<bool> delete(int id) async =>
+      _isar.writeTxn(() => _isar.measurements.delete(id));
 }

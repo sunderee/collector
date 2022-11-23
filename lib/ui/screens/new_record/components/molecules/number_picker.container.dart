@@ -24,12 +24,12 @@ class NumberPickerContainer extends StatelessWidget {
           title,
           style: Theme.of(context)
               .textTheme
-              .subtitle1
+              .titleMedium
               ?.copyWith(fontWeight: FontWeight.bold),
         ),
         Text(
           units,
-          style: Theme.of(context).textTheme.overline,
+          style: Theme.of(context).textTheme.labelSmall,
         ),
         NumberPicker(
           minValue: 20,

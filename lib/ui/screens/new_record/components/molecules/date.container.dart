@@ -49,7 +49,7 @@ class DateContainer extends StatelessWidget {
           const SizedBox(width: 8.0),
           Text(
             date.formatToHumanReadable,
-            style: Theme.of(context).textTheme.bodyText1,
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
           const SizedBox(width: 16.0),
           Icon(

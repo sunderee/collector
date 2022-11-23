@@ -10,7 +10,7 @@ import 'package:share_plus/share_plus.dart';
 
 Future<void> exportAndShare() async {
   final jsonFile = await _jsonFileGenerator();
-  Share.shareFiles([jsonFile.path]);
+  Share.shareXFiles([XFile(jsonFile.path)]);
 }
 
 Future<File> _jsonFileGenerator() async {

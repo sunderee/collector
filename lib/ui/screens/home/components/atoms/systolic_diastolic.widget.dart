@@ -14,11 +14,12 @@ class SystolicDiastolicWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     return CircleAvatar(
-      backgroundColor: theme.colorScheme.primary.withOpacity(0.2),
+      backgroundColor: theme.colorScheme.primary,
       radius: 32.0,
       child: Text(
         '$systolic/$diastolic',
-        style: theme.textTheme.bodyLarge,
+        style: theme.textTheme.bodyMedium
+            ?.copyWith(color: theme.colorScheme.onPrimary),
       ),
     );
   }

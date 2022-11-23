@@ -6,11 +6,7 @@ import 'package:isar/isar.dart';
 final GetIt getIt = GetIt.instance;
 
 Future<void> initializeDependencies() async {
-  // final directory = await getApplicationDocumentsDirectory();
-  final isarInstance = await Isar.open(
-    [MeasurementSchema],
-    // directory: directory.path,
-  );
+  final isarInstance = await Isar.open([MeasurementSchema]);
   getIt.registerSingleton<Isar>(isarInstance);
   getIt.registerSingleton<IMeasurementRepository>(MeasurementRepository());
 }

@@ -16,15 +16,24 @@ class InputWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Column(
       children: [
-        Text(title, style: Theme.of(context).textTheme.labelMedium),
+        Text(
+          title,
+          style: theme.textTheme.labelMedium
+              ?.copyWith(color: theme.colorScheme.onSurface),
+        ),
         TextField(
           controller: controller,
           keyboardType: TextInputType.number,
           textInputAction: action,
           inputFormatters: [LengthLimitingTextInputFormatter(3)],
-          style: Theme.of(context).textTheme.displaySmall,
+          style: Theme.of(context)
+              .textTheme
+              .displaySmall
+              ?.copyWith(color: theme.colorScheme.onSurfaceVariant),
           textAlign: TextAlign.center,
           decoration: InputDecoration(
             border: InputBorder.none,

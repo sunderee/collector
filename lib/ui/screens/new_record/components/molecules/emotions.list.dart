@@ -27,7 +27,7 @@ class _EmotionsListState extends State<EmotionsList> {
   Widget build(BuildContext context) {
     const List<EmotionEnum> emotions = EmotionEnum.values;
     return SizedBox(
-      height: 48.0,
+      height: 40.0,
       width: MediaQuery.of(context).size.width,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,

@@ -48,14 +48,15 @@ class _NewRecordScreenState extends State<NewRecordScreen> {
                 int diastolic,
                 int pulse,
                 DateTime date,
-              ) =>
-                  BlocProvider.of<MeasurementCubit>(context).addMeasurement(
-                emotion: _emotion,
-                systolic: systolic,
-                diastolic: diastolic,
-                pulse: pulse,
-                date: date,
-              ),
+              ) {
+                BlocProvider.of<MeasurementCubit>(context).addMeasurement(
+                  emotion: _emotion,
+                  systolic: systolic,
+                  diastolic: diastolic,
+                  pulse: pulse,
+                  date: date,
+                );
+              },
             )
           ],
         ),

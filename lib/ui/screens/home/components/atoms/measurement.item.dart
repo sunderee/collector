@@ -20,6 +20,7 @@ class MeasurementItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
+
     return Slidable(
       key: ValueKey(data.id),
       startActionPane: ActionPane(
@@ -29,8 +30,8 @@ class MeasurementItem extends StatelessWidget {
             onPressed: (BuildContext context) =>
                 BlocProvider.of<MeasurementCubit>(context)
                     .deleteMeasurement(data.id),
-            foregroundColor: Colors.white,
-            backgroundColor: theme.colorScheme.error,
+            foregroundColor: theme.colorScheme.onErrorContainer,
+            backgroundColor: theme.colorScheme.errorContainer,
             icon: Icons.delete,
           ),
         ],
@@ -44,9 +45,13 @@ class MeasurementItem extends StatelessWidget {
           categorizeBloodPressure(data.systolic, data.diastolic)
                   ?.toHumanReadable(context) ??
               context.locale.categoryUnknown,
+          style: theme.textTheme.bodyLarge
+              ?.copyWith(color: theme.colorScheme.onSurface),
         ),
         subtitle: Text(
           data.timestamp.formatToHumanReadable,
+          style: theme.textTheme.bodyMedium
+              ?.copyWith(color: theme.colorScheme.onSurfaceVariant),
         ),
         trailing: data.emotion != null
             ? Text(data.emotion?.toEmotionEmoji ?? '')
@@ -54,6 +59,7 @@ class MeasurementItem extends StatelessWidget {
         onTap: () => showDialog<void>(
           context: context,
           builder: (BuildContext context) => Dialog(
+            backgroundColor: theme.colorScheme.surface,
             child: UpdateDialog(data: data),
           ),
         ),

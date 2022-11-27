@@ -67,21 +67,19 @@ class _MeasurementsContainerState extends State<MeasurementsContainer> {
             ),
           ),
           const SizedBox(height: 32.0),
-          MaterialButton(
-            color: Theme.of(context).colorScheme.primary,
-            minWidth: MediaQuery.of(context).size.width,
-            onPressed: () {
-              widget.onMeasurementSelected(
-                _currentSystolic,
-                _currentDiastolic,
-                _currentPulse,
-                _currentDate,
-              );
-              _showMeasurementDialog();
-            },
-            child: Text(
-              context.locale.screenNewRecordAdd,
-              style: const TextStyle(color: Colors.black87),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: ElevatedButton(
+              onPressed: () {
+                widget.onMeasurementSelected(
+                  _currentSystolic,
+                  _currentDiastolic,
+                  _currentPulse,
+                  _currentDate,
+                );
+                _showMeasurementDialog();
+              },
+              child: Text(context.locale.screenNewRecordAdd),
             ),
           ),
         ],
@@ -91,15 +89,32 @@ class _MeasurementsContainerState extends State<MeasurementsContainer> {
 
   void _showMeasurementDialog() => showDialog<void>(
         context: context,
-        builder: (BuildContext context) => AlertDialog(
-          title: Text(context.locale.screenNewRecordRecordAddedTitle),
-          content: Text(context.locale.screenNewRecordRecordAddedSubtitle),
-          actions: [
-            TextButton(
-              onPressed: () => context.pop(),
-              child: Text(context.locale.commonOK),
+        builder: (BuildContext context) {
+          final theme = Theme.of(context);
+
+          return AlertDialog(
+            backgroundColor: theme.colorScheme.surface,
+            title: Text(
+              context.locale.screenNewRecordRecordAddedTitle,
+              style: theme.textTheme.headlineSmall
+                  ?.copyWith(color: theme.colorScheme.onSurface),
             ),
-          ],
-        ),
+            content: Text(
+              context.locale.screenNewRecordRecordAddedSubtitle,
+              style: theme.textTheme.bodyMedium
+                  ?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => context.pop(),
+                child: Text(
+                  context.locale.commonOK,
+                  style: theme.textTheme.labelLarge
+                      ?.copyWith(color: theme.colorScheme.primary),
+                ),
+              ),
+            ],
+          );
+        },
       );
 }

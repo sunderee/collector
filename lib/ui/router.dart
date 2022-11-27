@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 
 enum AppRoute {
   home('/'),
-  newRecord('/new_record');
+  newRecord('/new-record');
 
   final String routePath;
   const AppRoute(this.routePath);

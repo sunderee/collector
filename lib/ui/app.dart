@@ -22,14 +22,14 @@ class App extends StatelessWidget {
     ]);
 
     return DynamicColorBuilder(
-      builder: (_, ColorScheme? darkDynamic) {
+      builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
         return MaterialApp.router(
           debugShowCheckedModeBanner: false,
           routeInformationProvider: router.routeInformationProvider,
           routeInformationParser: router.routeInformationParser,
           routerDelegate: router.routerDelegate,
-          theme: AppTheme.appTheme(darkDynamic, context),
-          darkTheme: AppTheme.appTheme(darkDynamic, context),
+          theme: AppTheme.appTheme(lightDynamic, context, true),
+          darkTheme: AppTheme.appTheme(darkDynamic, context, false),
           localizationsDelegates: const [
             AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,

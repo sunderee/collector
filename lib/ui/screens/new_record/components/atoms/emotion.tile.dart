@@ -17,34 +17,31 @@ class EmotionTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
-    return SizedBox(
-      height: 48.0,
-      child: Card(
-        elevation: 0.0,
-        clipBehavior: Clip.antiAlias,
-        color: isSelected
-            ? theme.colorScheme.primary
-            : theme.colorScheme.primary.withOpacity(0.1),
-        child: InkWell(
-          onTap: onPressed,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  emoji,
-                  style: theme.textTheme.bodySmall,
-                ),
-                const SizedBox(width: 4.0),
-                Text(
-                  emotion,
-                  style: theme.textTheme.bodySmall,
-                ),
-              ],
-            ),
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+      child: ActionChip(
+        side: BorderSide(
+          color: isSelected
+              ? theme.colorScheme.secondaryContainer
+              : theme.colorScheme.outline,
+        ),
+        backgroundColor: isSelected
+            ? theme.colorScheme.secondaryContainer
+            : theme.colorScheme.surface,
+        avatar: Text(
+          emoji,
+          style: theme.textTheme.labelLarge,
+        ),
+        label: Text(
+          emotion,
+          style: theme.textTheme.labelLarge?.copyWith(
+            color: isSelected
+                ? theme.colorScheme.onSecondaryContainer
+                : theme.colorScheme.onSurfaceVariant,
           ),
         ),
+        onPressed: onPressed,
       ),
     );
   }

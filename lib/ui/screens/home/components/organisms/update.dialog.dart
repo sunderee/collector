@@ -41,6 +41,8 @@ class _UpdateDialogState extends State<UpdateDialog> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return SafeArea(
       minimum: const EdgeInsets.all(16.0),
       child: Column(
@@ -51,6 +53,7 @@ class _UpdateDialogState extends State<UpdateDialog> {
             diastolicController: _diastolicController,
             pulseController: _pulseController,
           ),
+          const SizedBox(height: 8.0),
           DateContainer(
             date: _currentDateTime,
             onDateChanged: (DateTime newTime) {
@@ -58,25 +61,33 @@ class _UpdateDialogState extends State<UpdateDialog> {
             },
           ),
           const SizedBox(height: 32.0),
-          MaterialButton(
-            minWidth: MediaQuery.of(context).size.width,
-            color: Theme.of(context).colorScheme.primary,
-            child: Text(
-              context.locale.commonUpdate,
-              style: const TextStyle(color: Colors.black87),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: ElevatedButton(
+              style: ButtonStyle(
+                elevation: const MaterialStatePropertyAll(0.0),
+                backgroundColor: MaterialStatePropertyAll(
+                  theme.colorScheme.primary,
+                ),
+              ),
+              child: Text(
+                context.locale.commonUpdate,
+                style: theme.textTheme.labelLarge
+                    ?.copyWith(color: theme.colorScheme.onPrimary),
+              ),
+              onPressed: () {
+                final model = Measurement()
+                  ..id = widget.data.id
+                  ..emotion = widget.data.emotion
+                  ..systolic = int.parse(_systolicController.text)
+                  ..diastolic = int.parse(_diastolicController.text)
+                  ..pulse = int.parse(_pulseController.text)
+                  ..timestamp = _currentDateTime;
+                BlocProvider.of<MeasurementCubit>(context)
+                    .updateMeasurement(model);
+                Navigator.pop(context);
+              },
             ),
-            onPressed: () {
-              final model = Measurement()
-                ..id = widget.data.id
-                ..emotion = widget.data.emotion
-                ..systolic = int.parse(_systolicController.text)
-                ..diastolic = int.parse(_diastolicController.text)
-                ..pulse = int.parse(_pulseController.text)
-                ..timestamp = _currentDateTime;
-              BlocProvider.of<MeasurementCubit>(context)
-                  .updateMeasurement(model);
-              Navigator.pop(context);
-            },
           ),
         ],
       ),
